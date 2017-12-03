@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  traefik-certificate-extractor:
+    container_name: traefik-certificate-extractor
+    image: vetal2409/traefik-certificate-extractor
+    restart: always
+    volumes:
+      - ${ACME_DATA_PATH}:/app/data      
+      - ${CERTS_PATH}:/app/certs
+      - ${CERTS_FLAT_PATH}:/app/certs_flat
